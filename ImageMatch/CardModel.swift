@@ -13,7 +13,14 @@ class CardModel {
     func getCards() -> [Card] {
         var generatedCards = [Card]()
         
-        for _ in 1...8 {
+        //generates random pair of cards between numbers
+        //1 and 4, so that there are 8 cards
+        //when landscape view on simulator, 4 cards even per row
+        //when vertical view on simulator, 2 cards per row (not even)
+        // ----- need to either code app to automatically switch to
+        //       horizontal view, or adjust collection view constraints
+        
+        for _ in 1...4 {
             let randomNum = arc4random_uniform(13) + 1
             
             var card1 = Card()

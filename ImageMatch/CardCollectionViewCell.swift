@@ -8,9 +8,8 @@
 
 import UIKit
 
-class CardCollectionViewCell: UICollectionView {
-    
-    @IBOutlet var frontImageView: UIImageView!
-    @IBOutlet var backImageView: UIImageView!
-    
+class CardCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var frontImageView: UIImageView!
+    @IBOutlet weak var backImageView: UIImageView!
 }
