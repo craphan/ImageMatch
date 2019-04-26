@@ -11,10 +11,14 @@
 		2B7820632272836B00B4C1EE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7820622272836B00B4C1EE /* Card.swift */; };
 		2B7820652272887000B4C1EE /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7820642272887000B4C1EE /* CardCollectionViewCell.swift */; };
 		2BB5A5422264F3B200AE8A18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5A5412264F3B200AE8A18 /* AppDelegate.swift */; };
-		2BB5A5442264F3B200AE8A18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5A5432264F3B200AE8A18 /* ViewController.swift */; };
+		2BB5A5442264F3B200AE8A18 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB5A5432264F3B200AE8A18 /* CardViewController.swift */; };
 		2BB5A5472264F3B200AE8A18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB5A5452264F3B200AE8A18 /* Main.storyboard */; };
 		2BB5A5492264F3B300AE8A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB5A5482264F3B300AE8A18 /* Assets.xcassets */; };
 		2BB5A54C2264F3B300AE8A18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB5A54A2264F3B300AE8A18 /* LaunchScreen.storyboard */; };
+		EACAF7E322736A8400F82CBD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAF7E222736A8400F82CBD /* MainViewController.swift */; };
+		EACAF7E522736C3600F82CBD /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAF7E422736C3600F82CBD /* HighScoreViewController.swift */; };
+		EACAF7E722736C7B00F82CBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAF7E622736C7B00F82CBD /* LoginViewController.swift */; };
+		EACAF7E922736CE500F82CBD /* OptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAF7E822736CE500F82CBD /* OptionPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +27,15 @@
 		2B7820642272887000B4C1EE /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		2BB5A53E2264F3B200AE8A18 /* ImageMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB5A5412264F3B200AE8A18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BB5A5432264F3B200AE8A18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BB5A5432264F3B200AE8A18 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		2BB5A5462264F3B200AE8A18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BB5A5482264F3B300AE8A18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BB5A54B2264F3B300AE8A18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BB5A54D2264F3B300AE8A18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACAF7E222736A8400F82CBD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EACAF7E422736C3600F82CBD /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
+		EACAF7E622736C7B00F82CBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EACAF7E822736CE500F82CBD /* OptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +69,17 @@
 			isa = PBXGroup;
 			children = (
 				2BB5A5412264F3B200AE8A18 /* AppDelegate.swift */,
-				2BB5A5432264F3B200AE8A18 /* ViewController.swift */,
-				2B7820602272827600B4C1EE /* CardModel.swift */,
 				2B7820622272836B00B4C1EE /* Card.swift */,
 				2B7820642272887000B4C1EE /* CardCollectionViewCell.swift */,
+				2B7820602272827600B4C1EE /* CardModel.swift */,
+				2BB5A5432264F3B200AE8A18 /* CardViewController.swift */,
+				EACAF7E422736C3600F82CBD /* HighScoreViewController.swift */,
+				EACAF7E622736C7B00F82CBD /* LoginViewController.swift */,
+				EACAF7E222736A8400F82CBD /* MainViewController.swift */,
+				EACAF7E822736CE500F82CBD /* OptionPickerViewController.swift */,
 				2BB5A5452264F3B200AE8A18 /* Main.storyboard */,
-				2BB5A5482264F3B300AE8A18 /* Assets.xcassets */,
 				2BB5A54A2264F3B300AE8A18 /* LaunchScreen.storyboard */,
+				2BB5A5482264F3B300AE8A18 /* Assets.xcassets */,
 				2BB5A54D2264F3B300AE8A18 /* Info.plist */,
 			);
 			path = ImageMatch;
@@ -144,10 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BB5A5442264F3B200AE8A18 /* ViewController.swift in Sources */,
+				2BB5A5442264F3B200AE8A18 /* CardViewController.swift in Sources */,
+				EACAF7E522736C3600F82CBD /* HighScoreViewController.swift in Sources */,
 				2BB5A5422264F3B200AE8A18 /* AppDelegate.swift in Sources */,
 				2B7820612272827600B4C1EE /* CardModel.swift in Sources */,
+				EACAF7E722736C7B00F82CBD /* LoginViewController.swift in Sources */,
+				EACAF7E322736A8400F82CBD /* MainViewController.swift in Sources */,
 				2B7820652272887000B4C1EE /* CardCollectionViewCell.swift in Sources */,
+				EACAF7E922736CE500F82CBD /* OptionPickerViewController.swift in Sources */,
 				2B7820632272836B00B4C1EE /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
