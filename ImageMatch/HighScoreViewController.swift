@@ -8,6 +8,8 @@
 
 import UIKit
 
-class scores: UIViewController {
+class HighScoreViewController: UIViewController {
     //scores for everyone
+    
+    
 }

@@ -8,6 +8,8 @@
 
 import UIKit
 
-class imageOptions: UIViewController {
+class OptionPickerViewController: UIViewController {
     //images
+    
+    
 }

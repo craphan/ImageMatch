@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Logins-->
+        <!--Login View Controller-->
         <scene sceneID="Rsu-Dt-ssn">
             <objects>
-                <viewController id="UJZ-sO-N6a" customClass="Logins" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UJZ-sO-N6a" customClass="LoginViewController" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="buw-lM-Did">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
         <!--CardMatch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="CardMatch" id="BYZ-38-t0r" customClass="ViewController" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CardMatch" id="BYZ-38-t0r" customClass="CardViewController" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,56 +96,68 @@
         <!--Initial-->
         <scene sceneID="DVa-Z9-uJR">
             <objects>
-                <viewController title="Initial" id="PFj-Yn-jWr" customClass="mainController" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Initial" id="PFj-Yn-jWr" customClass="MainViewController" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BAQ-hS-26Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1y-iL-M2F">
-                                <rect key="frame" x="150.5" y="136" width="74" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="UJZ-sO-N6a" kind="show" identifier="Login" id="BoO-6L-aPZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGu-p4-7X4">
-                                <rect key="frame" x="159" y="282" width="57" height="49"/>
+                                <rect key="frame" x="83" y="282" width="209" height="49"/>
+                                <color key="backgroundColor" red="1" green="0.57293450339999996" blue="0.15975492290000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="8hS-8E-IDt" kind="show" identifier="ImageOptions" id="JLI-yE-Azd"/>
+                                    <segue destination="8hS-8E-IDt" kind="show" identifier="GameMode" id="Mb0-hI-KrT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8S-EP-XfY">
-                                <rect key="frame" x="106.5" y="448" width="162" height="49"/>
+                                <rect key="frame" x="83" y="448" width="209" height="49"/>
+                                <color key="backgroundColor" red="1" green="0.57293450339999996" blue="0.15975492290000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="High Scores"/>
                                 <connections>
-                                    <segue destination="or1-Yo-uoN" kind="show" identifier="HighScores" id="AzM-3g-65p"/>
+                                    <segue destination="or1-Yo-uoN" kind="show" identifier="HighScores" id="n9X-Pw-dnE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1y-iL-M2F">
+                                <rect key="frame" x="83" y="135" width="209" height="49"/>
+                                <color key="backgroundColor" red="1" green="0.57293450339999996" blue="0.15975492290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="UJZ-sO-N6a" kind="show" identifier="Login" id="s5J-GW-voj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z1y-iL-M2F" firstAttribute="centerX" secondItem="BAQ-hS-26Z" secondAttribute="centerX" id="3DL-QV-WmI"/>
-                            <constraint firstItem="z1y-iL-M2F" firstAttribute="top" secondItem="UOr-4R-ORm" secondAttribute="top" constant="116" id="4ST-C1-2Ie"/>
+                            <constraint firstItem="z1y-iL-M2F" firstAttribute="top" secondItem="UOr-4R-ORm" secondAttribute="top" constant="115" id="4ST-C1-2Ie"/>
+                            <constraint firstItem="UOr-4R-ORm" firstAttribute="trailing" secondItem="n8S-EP-XfY" secondAttribute="trailing" constant="83" id="4c1-Ed-84n"/>
                             <constraint firstItem="n8S-EP-XfY" firstAttribute="top" secondItem="xGu-p4-7X4" secondAttribute="bottom" constant="117" id="51a-Cg-fXi"/>
                             <constraint firstItem="n8S-EP-XfY" firstAttribute="centerX" secondItem="BAQ-hS-26Z" secondAttribute="centerX" id="9Og-Jy-8fD"/>
-                            <constraint firstItem="xGu-p4-7X4" firstAttribute="top" secondItem="z1y-iL-M2F" secondAttribute="bottom" constant="97" id="ZRa-hb-zdW"/>
+                            <constraint firstItem="UOr-4R-ORm" firstAttribute="trailing" secondItem="z1y-iL-M2F" secondAttribute="trailing" constant="83" id="MPn-55-MxW"/>
+                            <constraint firstItem="xGu-p4-7X4" firstAttribute="leading" secondItem="UOr-4R-ORm" secondAttribute="leading" constant="83" id="MXs-sX-LX1"/>
+                            <constraint firstItem="z1y-iL-M2F" firstAttribute="leading" secondItem="UOr-4R-ORm" secondAttribute="leading" constant="83" id="Sgw-WD-Q1N"/>
+                            <constraint firstItem="xGu-p4-7X4" firstAttribute="top" secondItem="z1y-iL-M2F" secondAttribute="bottom" constant="98" id="ZRa-hb-zdW"/>
                             <constraint firstItem="xGu-p4-7X4" firstAttribute="centerX" secondItem="BAQ-hS-26Z" secondAttribute="centerX" id="igl-vL-IU7"/>
+                            <constraint firstItem="n8S-EP-XfY" firstAttribute="leading" secondItem="UOr-4R-ORm" secondAttribute="leading" constant="83" id="u7a-Gr-pob"/>
+                            <constraint firstItem="UOr-4R-ORm" firstAttribute="trailing" secondItem="xGu-p4-7X4" secondAttribute="trailing" constant="83" id="zzz-go-M6E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UOr-4R-ORm"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0N-np-gH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338" y="-668"/>
+            <point key="canvasLocation" x="1336.8" y="-668.81559220389806"/>
         </scene>
-        <!--Image Options-->
+        <!--Option Picker View Controller-->
         <scene sceneID="OUt-3p-3a1">
             <objects>
-                <viewController id="8hS-8E-IDt" customClass="imageOptions" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8hS-8E-IDt" customClass="OptionPickerViewController" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3xU-HD-XXc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +172,7 @@
         <!--HighScore -->
         <scene sceneID="rRx-k7-Yv4">
             <objects>
-                <viewController title="HighScore " id="or1-Yo-uoN" customClass="scores" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HighScore " id="or1-Yo-uoN" customClass="HighScoreViewController" customModule="ImageMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="agi-Pr-qqV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

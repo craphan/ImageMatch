@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class Logins: UIViewController, UIWebViewDelegate {
+class LoginViewController: UIViewController, UIWebViewDelegate {
     //logins for scores
     
 }
