@@ -8,8 +8,30 @@
 
 import UIKit
 
-class OptionPickerViewController: UIViewController {
+class OptionPickerViewController: UIViewController, UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     //images
+    @IBOutlet var pickerView:UIPickerView!
     
+    let gameModes = ["Animals", "Fruits", "Sports", "Colors"]
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return gameModes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        /*item.department = gameModes[row]
+    }*/
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
