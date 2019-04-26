@@ -161,9 +161,23 @@
                     <view key="view" contentMode="scaleToFill" id="3xU-HD-XXc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-GB-3MO">
+                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9cE-dY-tlm" firstAttribute="bottom" secondItem="p7Y-GB-3MO" secondAttribute="bottom" constant="226" id="J4q-ak-osd"/>
+                            <constraint firstItem="p7Y-GB-3MO" firstAttribute="trailing" secondItem="9cE-dY-tlm" secondAttribute="trailing" id="Ybp-Kh-U0s"/>
+                            <constraint firstItem="p7Y-GB-3MO" firstAttribute="top" secondItem="9cE-dY-tlm" secondAttribute="top" constant="205" id="mae-4B-NhL"/>
+                            <constraint firstItem="p7Y-GB-3MO" firstAttribute="leading" secondItem="9cE-dY-tlm" secondAttribute="leading" id="q8h-L6-YzX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9cE-dY-tlm"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="p7Y-GB-3MO" id="O7j-hL-h5O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPY-Ms-FvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

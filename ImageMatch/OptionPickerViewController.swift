@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OptionPickerViewController: UIViewController, UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class OptionPickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     //images
     @IBOutlet var pickerView:UIPickerView!
     
@@ -16,6 +16,10 @@ class OptionPickerViewController: UIViewController, UIViewController, UIPickerVi
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return gameModes.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
