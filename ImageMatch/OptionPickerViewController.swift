@@ -31,8 +31,21 @@ class OptionPickerViewController: UIViewController, UIPickerViewDelegate, UIPick
     }*/
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "Play"?: //segues to view list of high scores
+            let cardViewController = segue.destination as! CardViewController
+        default:
+            preconditionFailure("Unexpected segue indentifier.")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
