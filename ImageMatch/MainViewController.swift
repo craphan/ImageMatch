@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         case "Login"?: //segues to login in as user
             let loginViewController = segue.destination as! LoginViewController
         case "GameMode"?: //segues to option picker to choose "game mode"
-            let optionPickerViewController = segue.destination as! OptionPickerViewController
+            let cardViewController = segue.destination as! CardViewController
         default:
             preconditionFailure("Unexpected segue indentifier.")
         }

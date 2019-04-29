@@ -23,10 +23,10 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func flipCard() {
-        
+        UIView.transition(from: backImageView, to: frontImageView, duration: 0.3, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
     }
     
     func flipBack() {
-        <#function body#>
+        
     }
 }

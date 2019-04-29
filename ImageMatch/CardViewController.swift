@@ -33,15 +33,23 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        //Get a cardCollectionViewCell object
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCollectionViewCell
         
+        //Get the card that collection view is going to display
         let card = cards[indexPath.row]
+        
+        //set card for the cell
         cell.setCard(card)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
+        
+        //flip the card
+        cell.flipCard()
     }
 
 }
