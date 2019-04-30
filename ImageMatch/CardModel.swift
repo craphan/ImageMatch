@@ -21,7 +21,10 @@ class CardModel {
         //       horizontal view, or adjust collection view constraints
         
         for _ in 1...4 {
-            let randomNum = arc4random_uniform(13) + 1
+            let randomNum = arc4random_uniform(4) + 1
+            
+            //log the number to see four sets of cards
+            print("generate random number \(randomNum)" )
             
             var card1 = Card()
             card1.imageName = "card\(randomNum)"
@@ -31,6 +34,8 @@ class CardModel {
             card2.imageName = "card\(randomNum)"
             generatedCards.append(card2)
         }
+        //printing number of cards to make sure it works
+        print(generatedCards.count)
         
         return generatedCards
     }

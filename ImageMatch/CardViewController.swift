@@ -18,9 +18,12 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
       
         //connects collection view delegate and datasource properties to view controller
+        
+        cards = model.getCards()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
-        cards = model.getCards()
+ 
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +49,7 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        print("A cell is tapped: \(indexPath.row)")
         let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
         
         //flip the card
