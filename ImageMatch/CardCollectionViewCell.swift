@@ -18,6 +18,22 @@ class CardCollectionViewCell: UICollectionViewCell {
     func setCard(_ card:Card) {
         //keeps track of the card that gets passed in
         self.card = card
+        
+        //making sure card cells are not reused
+        if card.isMatched == true {
+            //if matched imageviews are zero
+            backImageView.alpha = 0
+            frontImageView.alpha = 0
+            return
+        }
+       else {
+         //image views should be here
+         //Causing errors 
+            backImageView.alpha = 1
+            frontImageView.alpha = 1
+        }
+    
+        
         frontImageView.image = UIImage(named: card.imageName)
         //Determine flipped state
         if card.isFlipped == true {
@@ -36,6 +52,18 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func flipBack() {
-        UIView.transition(from: frontImageView, to: backImageView, duration: 0.4, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+           UIView.transition(from: self.frontImageView, to: self.backImageView, duration: 0.4, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
+        }
     }
-}
+    
+    func remove() {
+        //remove imageviews
+        backImageView.alpha = 0
+        //animate
+        UIView.animate(withDuration: 0.4, delay: 0.5, options: .curveEaseIn, animations: {
+            self.frontImageView.alpha = 0
+        }, completion: nil)
+    }
+}//end of file

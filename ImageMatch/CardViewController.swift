@@ -14,6 +14,8 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var model = CardModel()
     var cards = [Card]()
     
+    var firstFlipIndex:IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -55,25 +57,78 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
         
         //Get card user selected
-        //FLIPPING ERROR MAY BE HERE
         var card = cards[indexPath.row]
         
-        if card.isFlipped == false {
+        if card.isFlipped == false && card.isMatched == false {
+            
             //flip card front
             cell.flipCard()
             
             //set to true
             card.isFlipped = true
             
+            //debugging
+            if card.isFlipped == true {
+                print("true")
+            }
+            else {
+                print("error")
+            }
+            //determine order of flipping: first or second
+            if firstFlipIndex == nil {
+                //first card
+                firstFlipIndex = indexPath
+            }
+            else {
+                //second card
+                //preform matching logic
+                checkMatches(indexPath)
+            }//end else
+            
+        }//end big else
+        
+    }//end func didselect
+    func checkMatches(_ secondFlipIndex:IndexPath) {
+        
+        //get card cells that were revealed
+        let cardOneCell = collectionView.cellForItem(at: firstFlipIndex!) as? CardCollectionViewCell
+        let  cardTwoCell = collectionView.cellForItem(at: secondFlipIndex) as? CardCollectionViewCell
+        //get cards for the two revealed cards
+        var cardOne = cards[firstFlipIndex!.row]
+        var cardTwo = cards[secondFlipIndex.row]
+        
+        //compare
+        if cardOne.imageName == cardTwo.imageName {
+            print("It's a match")
+            
+            cardOne.isMatched = true
+            cardTwo.isMatched  = true
+            
+            //remove from cells
+            cardOneCell?.remove()
+            cardTwoCell?.remove()
         }
         else {
-            //flip card back
-            cell.flipBack()
+            print("It's not a match")
             
-            //keep set to false
-            card.isFlipped = false
+            //matching
+            cardOne.isFlipped = false
+            cardTwo.isFlipped = false
+            
+            //flip back
+            cardOneCell?.flipBack()
+            cardTwoCell?.flipBack()
+            
         }
+        
+        //tell collection view to reload cells of first card if it is nil
+        if cardOneCell == nil {
+            collectionView.reloadItems(at: [firstFlipIndex!])
+        }
+        
+        //reset the property for tracking 
+        firstFlipIndex = nil 
     }
 
-}
+}//End view bracket
 
