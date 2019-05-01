@@ -11,10 +11,14 @@ import UIKit
 class CardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    //properties
     var model = CardModel()
     var cards = [Card]()
-    
+    var time: Timer?
     var firstFlipIndex:IndexPath?
+    var milli:Float = 10000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +30,36 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         collectionView.dataSource = self
  
+        //timer object
+        time = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(time!, forMode: .commonModes)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    @objc func timerElapsed() {
+        //take time off
+        milli -= 1
+        
+        //convert to seconds now
+        let seconds = String(format: "%.2f", milli/1000)
+        
+        //label
+        timeLabel.text = "Time Remaining: \(seconds)"
+        
+        
+        //When timer hits 0
+        if milli <= 0 {
+            time?.invalidate()
+            timeLabel.textColor = UIColor.blue
+            
+            //check time
+            checkGameEnded()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
     }
@@ -107,6 +135,9 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
             //remove from cells
             cardOneCell?.remove()
             cardTwoCell?.remove()
+            
+            //check if there are unmatched
+            checkGameEnded()
         }
         else {
             print("It's not a match")
@@ -129,6 +160,42 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //reset the property for tracking 
         firstFlipIndex = nil 
     }
-
+    
+    func checkGameEnded() {
+        //determine if there are unmatched
+        //if not stop timer
+        //if there are check time
+        //show message
+        
+        var isWon = true
+        for card in cards {
+            if card.isMatched == false {
+                isWon = false
+                break
+            }//end if
+        }//end for
+        
+        //messaging variables
+        var title = ""
+        var message = ""
+        if isWon == true {
+            if milli > 0 {
+                time?.invalidate()
+            }
+            title = "Congrats!"
+            message = "You've Won!"
+        }
+        else {
+            if milli > 0 {
+                return
+            }
+            title = "Game Over"
+            message = "You've Lost "
+        }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "okay", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }//end func
 }//End view bracket
 

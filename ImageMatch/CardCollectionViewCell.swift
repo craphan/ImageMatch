@@ -26,12 +26,13 @@ class CardCollectionViewCell: UICollectionViewCell {
             frontImageView.alpha = 0
             return
         }
-       else {
+//ERRORS HERE 
+     /* else {
          //image views should be here
          //Causing errors 
             backImageView.alpha = 1
             frontImageView.alpha = 1
-        }
+        }*/
     
         
         frontImageView.image = UIImage(named: card.imageName)
