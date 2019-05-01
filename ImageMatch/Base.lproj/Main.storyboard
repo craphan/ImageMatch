@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PFj-Yn-jWr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PFj-Yn-jWr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,20 +63,20 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card1" translatesAutoresizingMaskIntoConstraints="NO" id="YCm-mi-1RH" userLabel="Image1">
-                                                            <rect key="frame" x="5" y="5" width="188" height="254"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Card2" translatesAutoresizingMaskIntoConstraints="NO" id="YCm-mi-1RH" userLabel="Image1">
+                                                            <rect key="frame" x="5" y="5" width="153" height="224"/>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backCard" translatesAutoresizingMaskIntoConstraints="NO" id="0hH-JW-LiQ" userLabel="Back">
-                                                            <rect key="frame" x="5" y="5" width="188" height="254"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backCard" translatesAutoresizingMaskIntoConstraints="NO" id="0hH-JW-LiQ" userLabel="Back">
+                                                            <rect key="frame" x="5" y="5" width="153" height="224"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="0hH-JW-LiQ" firstAttribute="top" secondItem="Ecb-H9-Di2" secondAttribute="top" constant="5" id="1Z8-nN-rCp"/>
-                                                    <constraint firstAttribute="bottom" secondItem="YCm-mi-1RH" secondAttribute="bottom" constant="5" id="5Nr-S8-uYp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="0hH-JW-LiQ" secondAttribute="trailing" constant="5" id="NFd-Aj-Wau"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0hH-JW-LiQ" secondAttribute="bottom" constant="5" id="V8f-fP-Xin"/>
-                                                    <constraint firstAttribute="trailing" secondItem="YCm-mi-1RH" secondAttribute="trailing" constant="5" id="eQi-qw-arm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YCm-mi-1RH" secondAttribute="bottom" constant="-5" id="5Nr-S8-uYp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0hH-JW-LiQ" secondAttribute="trailing" id="NFd-Aj-Wau"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0hH-JW-LiQ" secondAttribute="bottom" constant="-5" id="V8f-fP-Xin"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YCm-mi-1RH" secondAttribute="trailing" id="eQi-qw-arm"/>
                                                     <constraint firstItem="YCm-mi-1RH" firstAttribute="top" secondItem="Ecb-H9-Di2" secondAttribute="top" constant="5" id="gNZ-Bc-mjD"/>
                                                     <constraint firstItem="0hH-JW-LiQ" firstAttribute="leading" secondItem="Ecb-H9-Di2" secondAttribute="leading" constant="5" id="h7o-U0-hSW"/>
                                                     <constraint firstItem="YCm-mi-1RH" firstAttribute="leading" secondItem="Ecb-H9-Di2" secondAttribute="leading" constant="5" id="z30-4K-iUW"/>
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2089" y="-1052"/>
+            <point key="canvasLocation" x="2088.8000000000002" y="-1052.0239880059971"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mJL-OM-2zK">
@@ -119,18 +119,7 @@
                     <view key="view" contentMode="scaleToFill" id="IQE-m1-wEL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="fPk-6F-hvq">
-                                <rect key="frame" x="102" y="435" width="171" height="196"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.19215686269999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="pao-bE-Mn5" firstAttribute="bottom" secondItem="fPk-6F-hvq" secondAttribute="bottom" constant="36" id="i62-uP-98K"/>
-                            <constraint firstItem="pao-bE-Mn5" firstAttribute="trailing" secondItem="fPk-6F-hvq" secondAttribute="trailing" constant="102" id="op9-QJ-Yiy"/>
-                            <constraint firstItem="fPk-6F-hvq" firstAttribute="top" secondItem="pao-bE-Mn5" secondAttribute="top" constant="415" id="rWm-oq-xdY"/>
-                            <constraint firstItem="fPk-6F-hvq" firstAttribute="leading" secondItem="pao-bE-Mn5" secondAttribute="leading" constant="102" id="x8q-oD-Sf4"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pao-bE-Mn5"/>
                     </view>
                 </viewController>
@@ -146,17 +135,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Jpj-Wh-XZ2">
-                                <rect key="frame" x="102" y="435" width="170" height="196"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Yyv-pb-NyT">
+                                <rect key="frame" x="67" y="466" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.19215686269999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="nlM-CS-bwQ" firstAttribute="trailing" secondItem="Jpj-Wh-XZ2" secondAttribute="trailing" constant="103" id="FK4-RE-bVv"/>
-                            <constraint firstItem="nlM-CS-bwQ" firstAttribute="bottom" secondItem="Jpj-Wh-XZ2" secondAttribute="bottom" constant="36" id="KXC-PB-kUY"/>
-                            <constraint firstItem="Jpj-Wh-XZ2" firstAttribute="top" secondItem="nlM-CS-bwQ" secondAttribute="top" constant="415" id="KnS-5A-i7P"/>
-                            <constraint firstItem="Jpj-Wh-XZ2" firstAttribute="leading" secondItem="nlM-CS-bwQ" secondAttribute="leading" constant="102" id="QLl-HD-RcO"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nlM-CS-bwQ"/>
                     </view>
                 </viewController>
@@ -242,8 +226,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backCard" width="158.39999389648438" height="224.16000366210938"/>
-        <image name="card1" width="158.16000366210938" height="224.16000366210938"/>
-        <image name="icon" width="371.51998901367188" height="438.239990234375"/>
+        <image name="Card2" width="659" height="934"/>
+        <image name="backCard" width="660" height="934"/>
+        <image name="icon" width="16" height="16"/>
     </resources>
 </document>

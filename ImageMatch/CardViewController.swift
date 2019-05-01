@@ -184,18 +184,22 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
             title = "Congrats!"
             message = "You've Won!"
-        }
-        else {
+        } else {
             if milli > 0 {
                 return
             }
             title = "Game Over"
             message = "You've Lost "
         }
+        showAlert(title, message)
+    }//end func
+    
+    func showAlert(_ title: String, _ message: String) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "okay", style: .default, handler: nil)
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
-    }//end func
+    }
 }//End view bracket
 
