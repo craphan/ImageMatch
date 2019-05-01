@@ -43,17 +43,36 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let card = cards[indexPath.row]
         
         //set card for the cell
-        cell.setCard(card)
+       cell.setCard(card)
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        //debug
         print("A cell is tapped: \(indexPath.row)")
+        //get cell
         let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
         
-        //flip the card
-        cell.flipCard()
+        //Get card user selected
+        //FLIPPING ERROR MAY BE HERE
+        var card = cards[indexPath.row]
+        
+        if card.isFlipped == false {
+            //flip card front
+            cell.flipCard()
+            
+            //set to true
+            card.isFlipped = true
+            
+        }
+        else {
+            //flip card back
+            cell.flipBack()
+            
+            //keep set to false
+            card.isFlipped = false
+        }
     }
 
 }
