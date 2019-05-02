@@ -44,7 +44,7 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         milli -= 1
         
         //convert to seconds now
-        let seconds = String(format: "%.2f", milli/1000)
+        let seconds = String(format: "%.2f", milli/650)
         
         //label
         timeLabel.text = "Time Remaining: \(seconds)"

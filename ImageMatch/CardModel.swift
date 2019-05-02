@@ -11,6 +11,9 @@ import Foundation
 class CardModel {
     
     func getCards() -> [Card] {
+        
+        //store numbers that were already randomly generated
+        var generatedNumbers = [Int]()
         var generatedCards = [Card]()
         
         //generates random pair of cards between numbers
@@ -20,19 +23,26 @@ class CardModel {
         // ----- need to either code app to automatically switch to
         //       horizontal view, or adjust collection view constraints
         
-        for _ in 1...4 {
+        //while number until generated numbers array reaches # of cards
+        // we need
+        while generatedNumbers.count < 4 {
             let randomNum = arc4random_uniform(4) + 1
             
-            //log the number to see four sets of cards
-            print("generate random number \(randomNum)" )
-            
-            var card1 = Card()
-            card1.imageName = "card\(randomNum)"
-            generatedCards.append(card1)
-            
-            var card2 = Card()
-            card2.imageName = "card\(randomNum)"
-            generatedCards.append(card2)
+            //ensure that random number isn't one we already have
+            if generatedNumbers.contains(Int(randomNum)) == false {
+                //log the number to see four sets of cards
+                print("generate random number \(randomNum)" )
+                
+                generatedNumbers.append(Int(randomNum))
+                
+                var card1 = Card()
+                card1.imageName = "card\(randomNum)"
+                generatedCards.append(card1)
+                
+                var card2 = Card()
+                card2.imageName = "card\(randomNum)"
+                generatedCards.append(card2)
+            }
         }
         //printing number of cards to make sure it works
         print(generatedCards.count)
