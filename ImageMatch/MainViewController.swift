@@ -10,6 +10,12 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController {
+    
+    //  VARIABLES
+    //  ------------------------------------
+    var usernameArr:[String] = []
+    var highScoreArr:[Float] = []
+    
     //said buttons with seques
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,19 +34,41 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //  Peek at core data
-        //  Don't think any of this is useful just yet
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//
-//        let context = appDelegate.persistentContainer.viewContext
-//
-//        let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
-//        let newUser = NSManagedObject(entity: entity!, insertInto: context)
-//
-//        newUser.setValue("tjue", forKey: "username")
-//        newUser.setValue("1234", forKey: "password")
-//        newUser.setValue("5.4", forKey: "high score")
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try context.fetch(request)
+            
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    if let username = result.value(forKey: "username") as? String
+                    {
+                        usernameArr.append(username)
+                    }
+                    if let highScore = result.value(forKey: "highScore") as? Float
+                    {
+                        highScoreArr.append(highScore)
+                    }
+                }
+                
+                print(usernameArr)
+                print(highScoreArr)
+            }
+        }
+        catch
+        {
+            //  PROCESS ERRORS
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
