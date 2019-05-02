@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 class MainViewController: UIViewController {
     //said buttons with seques
     
@@ -25,6 +27,20 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //  Peek at core data
+        //  Don't think any of this is useful just yet
+        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//        let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
+//        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+//
+//        newUser.setValue("tjue", forKey: "username")
+//        newUser.setValue("1234", forKey: "password")
+//        newUser.setValue("5.4", forKey: "high score")
     }
     
     override func viewDidAppear(_ animated: Bool) {

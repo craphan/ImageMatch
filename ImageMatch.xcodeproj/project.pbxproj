@@ -18,6 +18,7 @@
 		EACAF7E322736A8400F82CBD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAF7E222736A8400F82CBD /* MainViewController.swift */; };
 		EACAF7E522736C3600F82CBD /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAF7E422736C3600F82CBD /* HighScoreViewController.swift */; };
 		EACAF7E722736C7B00F82CBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAF7E622736C7B00F82CBD /* LoginViewController.swift */; };
+		EE1B5ED3227A931C00FACDC0 /* ImageMatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE1B5ED1227A931C00FACDC0 /* ImageMatch.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EACAF7E222736A8400F82CBD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EACAF7E422736C3600F82CBD /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		EACAF7E622736C7B00F82CBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EE1B5ED2227A931C00FACDC0 /* ImageMatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageMatch.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				2BB5A5412264F3B200AE8A18 /* AppDelegate.swift */,
+				EE1B5ED1227A931C00FACDC0 /* ImageMatch.xcdatamodeld */,
 				2B7820622272836B00B4C1EE /* Card.swift */,
 				2B7820642272887000B4C1EE /* CardCollectionViewCell.swift */,
 				2B7820602272827600B4C1EE /* CardModel.swift */,
@@ -157,6 +160,7 @@
 				2BB5A5442264F3B200AE8A18 /* CardViewController.swift in Sources */,
 				EACAF7E522736C3600F82CBD /* HighScoreViewController.swift in Sources */,
 				2BB5A5422264F3B200AE8A18 /* AppDelegate.swift in Sources */,
+				EE1B5ED3227A931C00FACDC0 /* ImageMatch.xcdatamodeld in Sources */,
 				2B7820612272827600B4C1EE /* CardModel.swift in Sources */,
 				EACAF7E722736C7B00F82CBD /* LoginViewController.swift in Sources */,
 				EACAF7E322736A8400F82CBD /* MainViewController.swift in Sources */,
@@ -354,6 +358,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EE1B5ED1227A931C00FACDC0 /* ImageMatch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE1B5ED2227A931C00FACDC0 /* ImageMatch.xcdatamodel */,
+			);
+			currentVersion = EE1B5ED2227A931C00FACDC0 /* ImageMatch.xcdatamodel */;
+			path = ImageMatch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2BB5A5362264F3B100AE8A18 /* Project object */;
 }

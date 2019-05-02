@@ -52,11 +52,12 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         //When timer hits 0
         if milli <= 0 {
-            time?.invalidate()
-            timeLabel.textColor = UIColor.blue
-            
             //check time
             checkGameEnded()
+
+            time?.invalidate()
+            timeLabel.textColor = UIColor.yellow
+            
         }
     }
     
@@ -120,7 +121,9 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         //get card cells that were revealed
         let cardOneCell = collectionView.cellForItem(at: firstFlipIndex!) as? CardCollectionViewCell
+        
         let  cardTwoCell = collectionView.cellForItem(at: secondFlipIndex) as? CardCollectionViewCell
+        
         //get cards for the two revealed cards
         var cardOne = cards[firstFlipIndex!.row]
         var cardTwo = cards[secondFlipIndex.row]
@@ -136,7 +139,7 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cardOneCell?.remove()
             cardTwoCell?.remove()
             
-            //check if there are unmatched
+            //check if there are cards left
             checkGameEnded()
         }
         else {
@@ -162,10 +165,10 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func checkGameEnded() {
-        //determine if there are unmatched
-        //if not stop timer
-        //if there are check time
-        //show message
+        //  Determine if there are unmatched cards left
+        //  If not stop timer
+        //  If there are check time
+        //  Show message whether user has won or lost
         
         var isWon = true
         for card in cards {
@@ -184,6 +187,7 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
             title = "Congrats!"
             message = "You've Won!"
+
         } else {
             if milli > 0 {
                 return
@@ -197,7 +201,7 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func showAlert(_ title: String, _ message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "okay", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
     }
