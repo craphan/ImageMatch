@@ -10,6 +10,16 @@ import UIKit
 
 class CardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    //photo stuff
+    @IBOutlet var imageView: UIImageView!
+    var photo: Photo! {
+        didSet {
+            navigationItem.title = photo.title
+        }
+    }
+    var store: PhotoStore!
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -34,6 +44,16 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //timer object
         time = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
         RunLoop.main.add(time!, forMode: .commonModes)
+        
+        store.fetchImage(for: photo) { (result) -> Void in
+            switch result {
+            case let .success(image):
+                self.imageView.image = image
+            case let .failure(error):
+                print("Error fetching image for photo: \(error)")
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
