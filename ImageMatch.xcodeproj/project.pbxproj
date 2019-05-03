@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1FEF80227C499000F60CD3 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1FEF7E227C499000F60CD3 /* Photo+CoreDataClass.swift */; };
+		2B1FEF81227C499000F60CD3 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1FEF7F227C499000F60CD3 /* Photo+CoreDataProperties.swift */; };
 		2B7820612272827600B4C1EE /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7820602272827600B4C1EE /* CardModel.swift */; };
 		2B7820632272836B00B4C1EE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7820622272836B00B4C1EE /* Card.swift */; };
 		2B7820652272887000B4C1EE /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7820642272887000B4C1EE /* CardCollectionViewCell.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1FEF7E227C499000F60CD3 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2B1FEF7F227C499000F60CD3 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2B7820602272827600B4C1EE /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		2B7820622272836B00B4C1EE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2B7820642272887000B4C1EE /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		2BB5A5352264F3B100AE8A18 = {
 			isa = PBXGroup;
 			children = (
+				2B1FEF7E227C499000F60CD3 /* Photo+CoreDataClass.swift */,
+				2B1FEF7F227C499000F60CD3 /* Photo+CoreDataProperties.swift */,
 				2BB5A5402264F3B200AE8A18 /* ImageMatch */,
 				2BB5A53F2264F3B200AE8A18 /* Products */,
 			);
@@ -181,12 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1FEF81227C499000F60CD3 /* Photo+CoreDataProperties.swift in Sources */,
 				2BB5A5442264F3B200AE8A18 /* CardViewController.swift in Sources */,
 				9485764D227C376600E87069 /* PhotoDataSource.swift in Sources */,
 				EACAF7E522736C3600F82CBD /* HighScoreViewController.swift in Sources */,
 				2BB5A5422264F3B200AE8A18 /* AppDelegate.swift in Sources */,
 				94857647227C284600E87069 /* FlickrAPI.swift in Sources */,
 				2B7820612272827600B4C1EE /* CardModel.swift in Sources */,
+				2B1FEF80227C499000F60CD3 /* Photo+CoreDataClass.swift in Sources */,
 				9485764B227C308A00E87069 /* Photo.swift in Sources */,
 				EACAF7E722736C7B00F82CBD /* LoginViewController.swift in Sources */,
 				EACAF7E322736A8400F82CBD /* MainViewController.swift in Sources */,
