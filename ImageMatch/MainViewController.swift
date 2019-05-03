@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     //  ------------------------------------
     var usernameArr:[String] = []
     var highScoreArr:[Float] = []
+    @IBOutlet var UserTextField: UITextField!
     
     //said buttons with seques
     
@@ -35,17 +36,21 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
+
         let context = appDelegate.persistentContainer.viewContext
-        
+
+        let newUser = NSEntityDescription.insertNewObject(forEntityName: "Player", into: context)
+
+//        newUser.setValue("TJue", forKey: "username")
+//        newUser.setValue("2.0", forKey: "highScore")
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        
+
         request.returnsObjectsAsFaults = false
-        
+
         do
         {
             let results = try context.fetch(request)
-            
+
             if results.count > 0
             {
                 for result in results as! [NSManagedObject]
@@ -53,13 +58,16 @@ class MainViewController: UIViewController {
                     if let username = result.value(forKey: "username") as? String
                     {
                         usernameArr.append(username)
+                        
+                        //usernameArr.append(UserTextField.text!)
+
                     }
                     if let highScore = result.value(forKey: "highScore") as? Float
                     {
                         highScoreArr.append(highScore)
                     }
                 }
-                
+
                 print(usernameArr)
                 print(highScoreArr)
             }

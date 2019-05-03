@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 class LoginViewController: UIViewController, UIWebViewDelegate {
     
     var text: String!
-    //logins for scores
+  
 }

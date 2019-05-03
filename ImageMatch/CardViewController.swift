@@ -14,11 +14,12 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var timeLabel: UILabel!
     
     //properties
+    var isWon = false
     var model = CardModel()
     var cards = [Card]()
     var time: Timer?
     var firstFlipIndex:IndexPath?
-    var milli:Float = 10000
+    var milli:Float = 15 * 1000 //15 seconds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         milli -= 1
         
         //convert to seconds now
-        let seconds = String(format: "%.2f", milli/650)
+        let seconds = String(format: "%.2f", milli/1000)
         
         //label
         timeLabel.text = "Time Remaining: \(seconds)"
@@ -60,7 +61,7 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
         }
     }
-    
+    var cardsSpawned = 0
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
     }
@@ -74,8 +75,9 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let card = cards[indexPath.row]
         
         //set card for the cell
-       cell.setCard(card)
-        
+        cell.setCard(card)
+        print("add card", cardsSpawned)
+        cardsSpawned = cardsSpawned + 1
         return cell
     }
     
@@ -134,13 +136,14 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             cardOne.isMatched = true
             cardTwo.isMatched  = true
-            
+            print(cardsSpawned)
+             cardsSpawned = cardsSpawned - 2
             //remove from cells
             cardOneCell?.remove()
             cardTwoCell?.remove()
             
             //check if there are cards left
-            checkGameEnded()
+            //checkGameEnded()
         }
         else {
             print("It's not a match")
@@ -161,7 +164,8 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         //reset the property for tracking 
-        firstFlipIndex = nil 
+        firstFlipIndex = nil
+        checkGameEnded()
     }
     
     func checkGameEnded() {
@@ -169,10 +173,10 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //  If not stop timer
         //  If there are check time
         //  Show message whether user has won or lost
-        
-        var isWon = true
+       // var isWon = true
         for card in cards {
             if card.isMatched == false {
+                print("IsWonStatus", isWon)
                 isWon = false
                 break
             }//end if
@@ -181,12 +185,17 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //messaging variables
         var title = ""
         var message = ""
-        if isWon == true {
+        
+        if cardsSpawned == 0 {
+            isWon = true
+      
             if milli > 0 {
                 time?.invalidate()
+
             }
             title = "Congrats!"
             message = "You've Won!"
+
 
         } else {
             if milli > 0 {
@@ -201,7 +210,9 @@ class CardViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func showAlert(_ title: String, _ message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "Okay", style: .default) { (action) in
+            self.performSegue(withIdentifier: "FinishGame", sender: self)
+        }
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
     }

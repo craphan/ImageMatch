@@ -25,7 +25,7 @@ class CardModel {
         
         //while number until generated numbers array reaches # of cards
         // we need
-        while generatedNumbers.count < 4 {
+        while generatedNumbers.count < 3 {
             let randomNum = arc4random_uniform(4) + 1
             
             //ensure that random number isn't one we already have
